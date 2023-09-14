@@ -3,3 +3,17 @@ h1{
     background-color: aquamarine;
     text-align: center;
 }
+
+.country{
+    background-color:gainsboro;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    list-style-type: none;
+    border: solid 3px black;
+}
+
+img{
+    width: 290px
+}

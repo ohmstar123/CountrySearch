@@ -4,7 +4,16 @@ h1{
     text-align: center;
 }
 
-.country{
+.searchBoxes{
+    background-color: gainsboro;
+    border-radius: 30px;
+    border: solid 3px black;
+    width: 500px;
+    display: block;
+    padding: 20px;
+}
+
+ .country{
     background-color:gainsboro;
     width: 290px;
     padding-top: 10px;
@@ -15,7 +24,9 @@ h1{
     display: inline-block;
     vertical-align: top;
     border-radius: 20px;
-}
+    justify-content: center;
+} 
+
 
 .regions{
     list-style-type:none;

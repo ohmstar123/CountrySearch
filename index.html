@@ -9,16 +9,18 @@
 </head>
 <body>
 <!-- Place your content here -->
-
 <h1>SE 3316 Lab 1</h1>
-<label>Enter Country Name:</label>
-<input type="text", id="countryInput" placeholder="Country Name">
-<button type="button"> Submit Country</button>
 
-<br><br>
-<label>Enter Currency Code:</label>
-<input type="text", id="currencyInput" placeholder="Currency Code">
-<button type="button">Submit Currency</button>
+<div class="searchBoxes">
+    <label>Enter Country Name:</label>
+    <input type="text", id="countryInput" maxlength="20" placeholder="Country Name">
+    <button type="button" onclick="countryByName()"> Submit Country</button>
+    
+    <br><br>
+    <label>Enter Currency Code:</label>
+    <input type="text", id="currencyInput" maxlength="3" placeholder="Currency Code">
+    <button type="button" onclick="countryByCurrency()">Submit Currency</button>
+</div>
 
 
 <br>
@@ -377,7 +379,7 @@
 
 
 <!-- Embedded JavaScript go here -->
-<script> src="script.js"</script>
+<script src="script.js"></script>
 </body>
 </html>
 

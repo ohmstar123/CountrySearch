@@ -3,23 +3,24 @@
 <head>
 <meta charset="utf-8">
 <title>SE 3316 Lab 1</title>
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="User can search through 20 countries lists on the screen through their names or currency codes" content="">
+<meta name="Ohm Patel" content="">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Place your content here -->
 <h1>SE 3316 Lab 1</h1>
+<h2>By Ohm Patel</h2>
 
 <div class="searchBoxes">
     <label>Enter Country Name:</label>
     <input type="text", id="countryInput" maxlength="20" placeholder="Country Name">
-    <button type="button" onclick="countryByName()"> Submit Country</button>
+    <button type="button" id="countryBtn" onclick="countryByName()"> Submit Country</button>
     
     <br><br>
     <label>Enter Currency Code:</label>
     <input type="text", id="currencyInput" maxlength="3" placeholder="Currency Code">
-    <button type="button" onclick="countryByCurrency()">Submit Currency</button>
+    <button type="button" id="currencyBtn" onclick="countryByCurrency()">Submit Currency</button>
 </div>
 
 

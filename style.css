@@ -1,7 +1,15 @@
 h1{
     padding: 10px;
-    background-color: aquamarine;
+    color: Black;
     text-align: center;
+}
+
+h2{
+    color: Black;
+    text-align: center;
+    margin-top: -30px;
+    font-size: medium;
+    margin-bottom: 50px;
 }
 
 .searchBoxes{
@@ -38,4 +46,26 @@ img{
     margin-top: -20px;
     margin-left: -15px;
     margin-bottom: -40px;
+}
+
+body{
+    animation: bgcolor infinite 20s;
+}
+
+@keyframes bgcolor{
+    0%{
+        background: white;
+    }
+    20%{
+        background: #16a085;
+    }
+    40%{
+        background: #27ae60;
+    }
+    60%{
+        background: #2980b9;
+    }
+    80%{
+        background: #8e44ad;
+    }
 }

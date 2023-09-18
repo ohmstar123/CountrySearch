@@ -80,22 +80,33 @@ const countryInfo = [
 ]
 
 function displayResultsUsingCountry(validatedValue){
-    let currentNameCapitalized, result
- 
+    let currentNameCapitalized, capitalizedValidatedValue
+    let result = "Match Found!"
+    let counter = 0
+
     // If nothing is entered into the search box, display "no matches found"
     if (validatedValue.length == 0){
         return "No matching countries found"
     }
     else{
-        // Loop through all 20 countries and compare by their names. If one is found, display its information on the screen
+        // Loop through all 20 countries and compare by their names. If one is found, display its information on the screen. Maximum countries is 5
         for (let i = 0; i < 20; i++){
-            currentNameCapitalized = countryInfo[i].name.toUpperCase() 
-            if (validatedValue == currentNameCapitalized){
-                result = `Match Found!\n Country: ${countryInfo[i].name}\n Currency Code: ${countryInfo[i].currency}`
-                return result
+            currentNameCapitalized = countryInfo[i].name.toUpperCase()
+            capitalizedValidatedValue = validatedValue.toUpperCase()
+            
+            if (currentNameCapitalized.includes(capitalizedValidatedValue) && counter < 5){
+                result += `\nCountry: ${countryInfo[i].name}\nCurrency Code: ${countryInfo[i].currency}\n`  
+                counter++
             }
         }
-        return "No matching countries found"
+
+        // If no countries are found, tell the user, ""
+        if (result == "Match Found!"){
+            return "No matching countries found"
+        }
+        else{
+            return result
+        }
     }
 }
 

@@ -19,9 +19,11 @@ h2{
     width: 500px;
     display: block;
     padding: 20px;
+    margin: auto;
+    text-align: center;
 }
 
- .country{
+.country{
     background-color:gainsboro;
     width: 290px;
     padding-top: 10px;
@@ -48,10 +50,22 @@ img{
     margin-bottom: -40px;
 }
 
-body{
+html, body {
+    height: 100%;
     animation: bgcolor infinite 20s;
 }
 
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*Animated background color*/ 
 @keyframes bgcolor{
     0%{
         background: white;

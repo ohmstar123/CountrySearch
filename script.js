@@ -1,3 +1,4 @@
+//New variables
 var countrySearchValue, currencySearchValue
 
 // Gather the input values for country and currency code

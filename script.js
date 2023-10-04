@@ -63,9 +63,6 @@ function handleSearch(){
             }
         }
     }
-    // else{
-    //     indexArray = []
-    // }
     
     displaySearch(indexArray)
 }
@@ -86,23 +83,51 @@ function displaySearch(array){
     for(let i = 0; i < array.length; i++){
         const node = document.createElement("li")
         const img = document.createElement("img")
-        const br = document.createElement("br")
 
         img.src = countryInfo[array[i]].image
 
         allCountryInfo = document.createElement("div")
-        const countryName = document.createTextNode(`Country: ${countryInfo[array[i]].name}`)
-        
-        const currencyCode = document.createTextNode(`Currency: ${countryInfo[array[i]].currency}`)
+        const countryNameTitle = document.createElement("strong")
+        const countryName = document.createTextNode(`${countryInfo[array[i]].name}`)
+        const currencyCodeTitle = document.createElement("strong")
+        const currencyCode = document.createTextNode(`${countryInfo[array[i]].currency}`)
+        const wikiPage = document.createElement("a")
+        const countryRegionTitle = document.createElement("strong")
 
-        countryName.textContent = countryInfo[array[i]].name
+        countryNameTitle.textContent = "Country: "
+        currencyCodeTitle.textContent = "Currency: "
+        countryRegionTitle.textContent = "Regions:"
 
+        wikiPage.href = countryInfo[array[i]].wiki
+        const linkText = document.createElement("p")
+        wikiPage.textContent = "Wikipedia"
+        wikiPage.appendChild(linkText)
+
+        const countryRegions = document.createElement("ul")
+        countryRegions.className = "regions"
+        regionList = countryInfo[array[i]].regions.split(",")
+
+        for (let j = 0; j < regionList.length; j++){
+            tempLI = document.createElement("li")
+            tempLI.textContent = regionList[j]
+            countryRegions.appendChild(tempLI)
+        }
+
+        allCountryInfo.appendChild(countryNameTitle)
         allCountryInfo.appendChild(countryName)
-        allCountryInfo.appendChild(br)
+        allCountryInfo.appendChild(document.createElement("br"))
+        allCountryInfo.appendChild(currencyCodeTitle)
         allCountryInfo.appendChild(currencyCode)
+        allCountryInfo.appendChild(document.createElement("br"))
+        allCountryInfo.appendChild(wikiPage)
+        allCountryInfo.appendChild(countryRegionTitle)
+        allCountryInfo.appendChild(countryRegions)
+        //allCountryInfo.appendChild(document.createElement("br"))
 
         node.appendChild(img)
         node.appendChild(allCountryInfo)
+
+        node.className = "country"
         changingList.appendChild(node)
 
     }

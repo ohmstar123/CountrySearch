@@ -3,6 +3,8 @@ var countrySearchValue, currencySearchValue
 // Gather the input values for country and currency code
 inputCountry = document.getElementById("countryInput")
 inputCurrency = document.getElementById("currencyInput")
+searchContent = document.getElementById("searchContent")
+changingList = document.getElementById("changingList")
 
 // Function which executes the button press when the user presses enter within the country input box
 inputCountry.addEventListener("keypress", function(event){
@@ -17,7 +19,63 @@ inputCurrency.addEventListener("keypress", function(event){
         document.getElementById("currencyBtn").click();
     }
 })
+//NEW STUFF//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+inputCountry.addEventListener("input", handleSearch)
+log = document.getElementById("testing")
 
+// function handleSearch(e){
+//     countryName = inputCountry.value.toUpperCase()
+//     log.textContent = e.target.value
+// }
+
+function handleSearch(){
+    countryName = inputCountry.value.toUpperCase()
+    currencyCode = inputCurrency.value.toUpperCase()
+    indexArray = []
+    if (countryName != ""){
+        for (let i = 0; i < 20; i++){
+            if (countryInfo[i].name.toUpperCase().includes(countryName)){
+                indexArray.push(i)
+            }
+        }
+    }
+    
+    indexArray.forEach(element => {
+        console.log(element);
+     });
+}
+
+
+const countryInfo = [
+    {name: "Australia", currency: "AUD", wiki: "https://en.wikipedia.org/wiki/Australia", image: "images/au.png", regions: "Australian Capital Territory, New South Wales, Northern Territory, Queensland, South Australia, Tasmania, Victoria, Western Australia"}, 
+    {name: "Bangladesh", currency: "BDT"}, 
+    {name: "Djibouti", currency: "DJF"}, 
+    {name: "Kiribati", currency: "AUD"}, 
+    {name: "Comoros", currency: "KMF"}, 
+    {name: "Dominica", currency: "XCD"}, 
+    {name: "Monaco", currency: "EUR"}, 
+    {name: "Costa Rica", currency: "CRC"}, 
+    {name: "Antigua and Barbuda", currency: "XCD"}, 
+    {name: "Cyprus", currency: "CYP"}, 
+    {name: "Solomon Islands", currency: "SBD"}, 
+    {name: "Bosnia and Herzegovina", currency: "BAM"}, 
+    {name: "Fiji", currency: "JFD"}, 
+    {name: "Eritrea", currency: "ETB"}, 
+    {name: "Sao Tome and Principe", currency: "STD"}, 
+    {name: "Equatorial Guinea", currency: "XAF"}, 
+    {name: "Guinea-Bissau", currency: "XOF"}, 
+    {name: "Montserrat", currency: "XCD"}, 
+    {name: "New Caledonia", currency: "XPF"}, 
+    {name: "Canada", currency: "CAD"}
+]
+
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function countryByName(){
     inputValue = document.getElementById("countryInput").value.trim()
     pattern = /\d/ // Pattern which finds any integer values
@@ -131,3 +189,4 @@ function displayResultsUsingCurrency(validatedValue){
         return result
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

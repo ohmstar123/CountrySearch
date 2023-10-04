@@ -9,25 +9,50 @@
 </head>
 <body>
 <!-- Place your content here -->
-<h1>SE 3316 Lab 1</h1>
+<h1>SE 3316 Lab 2</h1>
 <h2>By Ohm Patel</h2>
 
 <div class="searchBoxes">
     <label>Enter Country Name:</label>
-    <input type="text", id="countryInput" maxlength="20" placeholder="Country Name">
+    <input type="text" id="countryInput" maxlength="20" placeholder="Country Name">
     <button type="button" id="countryBtn" onclick="countryByName()"> Submit Country</button>
     
     <br><br>
     <label>Enter Currency Code:</label>
-    <input type="text", id="currencyInput" maxlength="3" placeholder="Currency Code">
+    <input type="text" id="currencyInput" maxlength="3" placeholder="Currency Code">
     <button type="button" id="currencyBtn" onclick="countryByCurrency()">Submit Currency</button>
+</div>
+
+<p id="testing"></p>
+
+<div id="searchContent">
+    <!-- Lab 2 Search Content -->
+    <ul id="changingList">
+        <li><img src="images/au.png" alt="Flag of Australia"><br></li>
+        <b>Country: </b>Australia <br>
+        <b>Currency: </b>AUD <br>
+        <a href="https://en.wikipedia.org/wiki/Australia" target="_self">Wikipedia</a> <br>
+        
+        <b>Regions: </b> <br>
+        <ul class="regions">
+            <li>Australian Capital Territory</li>
+            <li>New South Wales</li>
+            <li>Northern Territory</li>
+            <li>Queensland</li>
+            <li>South Australia</li>
+            <li>Tasmania</li>
+            <li>Victoria</li>
+            <li>Western Australia</li>   
+        </ul>
+         
+    </ul>
 </div>
 
 
 <br>
 <!--Country 1-->
 <ul class="country">
-    <li><img src="images\au.png" alt="Flag of Australia"></li>
+    <li><img src="images/au.png" alt="Flag of Australia"></li>
     <li><b>Country: </b>Australia</li>
     <li><b>Currency: </b>AUD</li>
     <li><a href="https://en.wikipedia.org/wiki/Australia" target="_self">Wikipedia</a></li>
@@ -49,7 +74,7 @@
 
 <!--Country 2-->
 <ul class="country">
-    <li><img src="images\bd.png" alt="Flag of Bangladesh"></li>
+    <li><img src="images/bd.png" alt="Flag of Bangladesh"></li>
     <li><b>Country: </b>Bangladesh</li>
     <li><b>Currency: </b>BDT</li>
     <li><a href="https://en.wikipedia.org/wiki/Bangladesh" target="_self">Wikipedia</a></li>
@@ -69,7 +94,7 @@
 
 <!--Country 3-->
 <ul class="country">
-    <li><img src="images\dj.png" alt="Flag of Djibouti"></li>
+    <li><img src="images/dj.png" alt="Flag of Djibouti"></li>
     <li><b>Country: </b>Djibouti</li>
     <li><b>Currency: </b>DJF</li>
     <li><a href="https://en.wikipedia.org/wiki/Djibouti" target="_self">Wikipedia</a></li>
@@ -84,7 +109,7 @@
 
 <!--Country 4-->
 <ul class="country">
-    <li><img src="images\ki.png" alt="Flag of Kiribati"></li>
+    <li><img src="images/ki.png" alt="Flag of Kiribati"></li>
     <li><b>Country: </b>Kiribati</li>
     <li><b>Currency: </b>AUD</li>
     <li><a href="https://en.wikipedia.org/wiki/Kiribati" target="_self">Wikipedia</a></li>
@@ -98,7 +123,7 @@
 
 <!--Country 5-->
 <ul class="country">
-    <li><img src="images\km.png" alt="Flag of Comoros"></li>
+    <li><img src="images/km.png" alt="Flag of Comoros"></li>
     <li><b>Country: </b>Comoros</li>
     <li><b>Currency: </b>KMF</li>
     <li><a href="https://en.wikipedia.org/wiki/Comoros" target="_self">Wikipedia</a></li>
@@ -112,7 +137,7 @@
 
 <!--Country 6-->
 <ul class="country">
-    <li><img src="images\dm.png" alt="Flag of Dominica"></li>
+    <li><img src="images/dm.png" alt="Flag of Dominica"></li>
     <li><b>Country: </b>Dominica</li>
     <li><b>Currency: </b>XCD</li>
     <li><a href="https://en.wikipedia.org/wiki/Dominica" target="_self">Wikipedia</a></li>
@@ -132,7 +157,7 @@
 
 <!--Country 7-->
 <ul class="country">
-    <li><img src="images\mc.png" alt="Flag of Monaco"></li>
+    <li><img src="images/mc.png" alt="Flag of Monaco"></li>
     <li><b>Country: </b>Monaco</li>
     <li><b>Currency: </b>EUR</li>
     <li><a href="https://en.wikipedia.org/wiki/Monaco" target="_self">Wikipedia</a></li>
@@ -150,7 +175,7 @@
 
 <!--Country 8-->
 <ul class="country">
-    <li><img src="images\cr.png" alt="Flag of Costa Rica"></li>
+    <li><img src="images/cr.png" alt="Flag of Costa Rica"></li>
     <li><b>Country: </b>Costa Rica</li>
     <li><b>Currency: </b>CRC</li>
     <li><a href="https://en.wikipedia.org/wiki/Costa_Rica" target="_self">Wikipedia</a></li>
@@ -170,7 +195,7 @@
 
 <!--Country 9-->
 <ul class="country">
-    <li><img src="images\ag.png" alt="Flag of Antigua and Barbuda"></li>
+    <li><img src="images/ag.png" alt="Flag of Antigua and Barbuda"></li>
     <li><b>Country: </b>Antigua and Barbuda</li>
     <li><b>Currency: </b>XCD</li>
     <li><a href="https://en.wikipedia.org/wiki/Antigua_and_Barbuda" target="_self">Wikipedia</a></li>
@@ -189,7 +214,7 @@
 
 <!--Country 10-->
 <ul class="country">
-    <li><img src="images\cy.png" alt="Flag of Cyprus"></li>
+    <li><img src="images/cy.png" alt="Flag of Cyprus"></li>
     <li><b>Country: </b>Cyprus</li>
     <li><b>Currency: </b>CYP</li>
     <li><a href="https://en.wikipedia.org/wiki/Cyprus" target="_self">Wikipedia</a></li>
@@ -208,7 +233,7 @@
 
 <!--Country 11-->
 <ul class="country">
-    <li><img src="images\sb.png" alt="Flag of Solomon Islands"></li>
+    <li><img src="images/sb.png" alt="Flag of Solomon Islands"></li>
     <li><b>Country: </b>Solomon Islands</li>
     <li><b>Currency: </b>SBD</li>
     <li><a href="https://en.wikipedia.org/wiki/Solomon_Islands" target="_self">Wikipedia</a></li>
@@ -224,7 +249,7 @@
 
 <!--Country 12-->
 <ul class="country">
-    <li><img src="images\ba.png" alt="Flag of Bosnia and Herzegovina"></li>
+    <li><img src="images/ba.png" alt="Flag of Bosnia and Herzegovina"></li>
     <li><b>Country: </b>Bosnia and Herzegovina</li>
     <li><b>Currency: </b>BAM</li>
     <li><a href="https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina" target="_self">Wikipedia</a></li>
@@ -240,7 +265,7 @@
 
 <!--Country 13-->
 <ul class="country">
-    <li><img src="images\fj.png" alt="Flag of Fiji"></li>
+    <li><img src="images/fj.png" alt="Flag of Fiji"></li>
     <li><b>Country: </b>Fiji</li>
     <li><b>Currency: </b>FJD</li>
     <li><a href="https://en.wikipedia.org/wiki/Fiji" target="_self">Wikipedia</a></li>
@@ -258,7 +283,7 @@
 
 <!--Country 14-->
 <ul class="country">
-    <li><img src="images\er.png" alt="Flag of Eritrea"></li>
+    <li><img src="images/er.png" alt="Flag of Eritrea"></li>
     <li><b>Country: </b>Eritrea</li>
     <li><b>Currency: </b>ETB</li>
     <li><a href="https://en.wikipedia.org/wiki/Eritrea" target="_self">Wikipedia</a></li>
@@ -274,7 +299,7 @@
 
 <!--Country 15-->
 <ul class="country">
-    <li><img src="images\st.png" alt="Flag of Sao Tome and Principe"></li>
+    <li><img src="images/st.png" alt="Flag of Sao Tome and Principe"></li>
     <li><b>Country: </b>Sao Tome and Principe</li>
     <li><b>Currency: </b>STD</li>
     <li><a href="https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe" target="_self">Wikipedia</a></li>
@@ -288,7 +313,7 @@
 
 <!--Country 16-->
 <ul class="country">
-    <li><img src="images\gq.png" alt="Flag of Equatorial Guinea"></li>
+    <li><img src="images/gq.png" alt="Flag of Equatorial Guinea"></li>
     <li><b>Country: </b>Equatorial Guinea</li>
     <li><b>Currency: </b>XAF</li>
     <li><a href="https://en.wikipedia.org/wiki/Equatorial_Guinea" target="_self">Wikipedia</a></li>
@@ -305,7 +330,7 @@
 
 <!--Country 17-->
 <ul class="country">
-    <li><img src="images\gw.png" alt="Flag of Guinea-Bissau"></li>
+    <li><img src="images/gw.png" alt="Flag of Guinea-Bissau"></li>
     <li><b>Country: </b>Guinea-Bissau</li>
     <li><b>Currency: </b>XOF</li>
     <li><a href="https://en.wikipedia.org/wiki/Guinea-Bissau" target="_self">Wikipedia</a></li>
@@ -320,7 +345,7 @@
 
 <!--Country 18-->
 <ul class="country">
-    <li><img src="images\ms.png" alt="Flag of Montserrat"></li>
+    <li><img src="images/ms.png" alt="Flag of Montserrat"></li>
     <li><b>Country: </b>Montserrat</li>
     <li><b>Currency: </b>XCD</li>
     <li><a href="https://en.wikipedia.org/wiki/Montserrat" target="_self">Wikipedia</a></li>
@@ -335,7 +360,7 @@
 
 <!--Country 19-->
 <ul class="country">
-    <li><img src="images\nc.png" alt="Flag of New Caledonia"></li>
+    <li><img src="images/nc.png" alt="Flag of New Caledonia"></li>
     <li><b>Country: </b>New Caledonia</li>
     <li><b>Currency: </b>XPF</li>
     <li><a href="https://en.wikipedia.org/wiki/New_Caledonia#Geography" target="_self">Wikipedia</a></li>
@@ -350,7 +375,7 @@
 
 <!--Country 20-->
 <ul class="country">
-    <li><img src="images\ca.png" alt="Flag of Canada"></li>
+    <li><img src="images/ca.png" alt="Flag of Canada"></li>
     <li><b>Country: </b>Canada</li>
     <li><b>Currency: </b>CAD</li>
     <li><a href="https://en.wikipedia.org/wiki/Canada" target="_self">Wikipedia</a></li>

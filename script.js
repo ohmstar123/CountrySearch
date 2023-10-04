@@ -32,6 +32,7 @@ function handleSearch(){
     countryName = inputCountry.value.toUpperCase()
     currencyCode = inputCurrency.value.toUpperCase()
     indexArray = []
+
     if (countryName != ""){
         for (let i = 0; i < 20; i++){
             if (countryInfo[i].name.toUpperCase().includes(countryName)){
@@ -40,33 +41,31 @@ function handleSearch(){
         }
     }
     
-    indexArray.forEach(element => {
-        console.log(element);
-     });
+    
 }
 
 
 const countryInfo = [
     {name: "Australia", currency: "AUD", wiki: "https://en.wikipedia.org/wiki/Australia", image: "images/au.png", regions: "Australian Capital Territory, New South Wales, Northern Territory, Queensland, South Australia, Tasmania, Victoria, Western Australia"}, 
-    {name: "Bangladesh", currency: "BDT"}, 
-    {name: "Djibouti", currency: "DJF"}, 
-    {name: "Kiribati", currency: "AUD"}, 
-    {name: "Comoros", currency: "KMF"}, 
-    {name: "Dominica", currency: "XCD"}, 
-    {name: "Monaco", currency: "EUR"}, 
-    {name: "Costa Rica", currency: "CRC"}, 
-    {name: "Antigua and Barbuda", currency: "XCD"}, 
-    {name: "Cyprus", currency: "CYP"}, 
-    {name: "Solomon Islands", currency: "SBD"}, 
-    {name: "Bosnia and Herzegovina", currency: "BAM"}, 
-    {name: "Fiji", currency: "JFD"}, 
-    {name: "Eritrea", currency: "ETB"}, 
-    {name: "Sao Tome and Principe", currency: "STD"}, 
-    {name: "Equatorial Guinea", currency: "XAF"}, 
-    {name: "Guinea-Bissau", currency: "XOF"}, 
-    {name: "Montserrat", currency: "XCD"}, 
-    {name: "New Caledonia", currency: "XPF"}, 
-    {name: "Canada", currency: "CAD"}
+    {name: "Bangladesh", currency: "BDT", wiki: "https://en.wikipedia.org/wiki/Bangladesh", image: "images/bd.png", regions: "Barishal, Chattogram, Dhaka, Khulna, Rajshahi, Rangpur, Sylhet"}, 
+    {name: "Djibouti", currency: "DJF", wiki: "https://en.wikipedia.org/wiki/Djibouti", image: "images/dj.png", regions: "Arta, Djibouti"}, 
+    {name: "Kiribati", currency: "AUD", wiki: "https://en.wikipedia.org/wiki/Kiribati", image: "images/ki.png", regions: "Gilbert Islands"}, 
+    {name: "Comoros", currency: "KMF", wiki: "https://en.wikipedia.org/wiki/Comoros", image: "images/km.png", regions: "Grande Comore, Moheli"}, 
+    {name: "Dominica", currency: "XCD", wiki: "https://en.wikipedia.org/wiki/Dominica", image: "images/dm.png", regions: "Saint Andrew, Saint George, Saint John, Saint Joseph, Saint Luke, Saint Patrick, Saint Paul"}, 
+    {name: "Monaco", currency: "EUR", wiki: "https://en.wikipedia.org/wiki/Monaco", image: "images/mc.png", regions: "Fontvieille, La Condamine, Monaco-Ville, Monte-Carlo, Saint-Roman"}, 
+    {name: "Costa Rica", currency: "CRC", wiki: "https://en.wikipedia.org/wiki/Costa_Rica", image: "images/cr.png", regions: "Alajuela, Cartago, Guanacaste, Heredia, Limon, Puntarenas, San Jose"}, 
+    {name: "Antigua and Barbuda", currency: "XCD", wiki: "https://en.wikipedia.org/wiki/Antigua_and_Barbuda", image: "images/ag.png", regions: "Redonda, Saint George, Saint John, Saint Paul, Saint Peter, Saint Philip"}, 
+    {name: "Cyprus", currency: "CYP", wiki: "https://en.wikipedia.org/wiki/Cyprus", image: "images/cy.png", regions: "Ammochostos, Keryneia, Larnaka, Lefkosia, Lemesos, Pafos"}, 
+    {name: "Solomon Islands", currency: "SBD", wiki: "https://en.wikipedia.org/wiki/Solomon_Islands", image: "images/sb.png", regions: "Choiseul, Guadalcanal, Western"}, 
+    {name: "Bosnia and Herzegovina", currency: "BAM", wiki: "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina", image: "images/ba.png", regions: "Brcko Distrikt, Federacija Bosne i Hercegovine, Republika Srpska"}, 
+    {name: "Fiji", currency: "JFD", wiki: "https://en.wikipedia.org/wiki/Fiji", image: "images/fj.png", regions: "Central, Eastern, Northern, Rotuma, Western"}, 
+    {name: "Eritrea", currency: "ETB", wiki: "https://en.wikipedia.org/wiki/Eritrea", image: "images/er.png", regions: "Al Awsat, Janubi al Bahri al Ahmar, Shimali al Bahri al Ahmar"}, 
+    {name: "Sao Tome and Principe", currency: "STD", wiki: "https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe", image: "images/st.png", regions: "Agua Grande"}, 
+    {name: "Equatorial Guinea", currency: "XAF", wiki: "https://en.wikipedia.org/wiki/Equatorial_Guinea", image: "images/gq.png", regions: "Bioko Norte, Kie-Ntem, Litoral, Wele-Nzas"}, 
+    {name: "Guinea-Bissau", currency: "XOF", wiki: "https://en.wikipedia.org/wiki/Guinea-Bissau", image: "images/gw.png", regions: "Bissau, Gabu"}, 
+    {name: "Montserrat", currency: "XCD", wiki: "https://en.wikipedia.org/wiki/Montserrat", images: "images/ms.png", regions: "Saint Anthony, Saint Peter"}, 
+    {name: "New Caledonia", currency: "XPF", wiki: "https://en.wikipedia.org/wiki/New_Caledonia#Geography", images: "images/nc.png", regions: "Province Nord, Province Sud"}, 
+    {name: "Canada", currency: "CAD", wiki: "https://en.wikipedia.org/wiki/Canada", images: "images/ca.png", regions: "Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan Yukon"}
 ]
 
 

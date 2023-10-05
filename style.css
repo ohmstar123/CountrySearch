@@ -46,6 +46,38 @@ h2{
     margin: 1rem;
 } 
 
+.dynamic-country{
+    background-color:gainsboro;
+    width: 290px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    list-style-type: none;
+    border: solid 3px black;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 20px;
+    justify-content: center;
+    margin: 1rem;
+} 
+
+.searchContent{
+    background-color: cornsilk;
+    /* width: auto; */
+
+    display: inline-block; /* or display: inline; */
+    border: 5px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 0;
+    margin: 0;
+}
+
+hr{
+    border: 5px solid #000;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+
 
 .regions{
     list-style-type:none;

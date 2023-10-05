@@ -6,20 +6,7 @@ inputCurrency = document.getElementById("currencyInput")
 searchContent = document.getElementById("searchContent")
 changingList = document.getElementById("changingList")
 
-// Function which executes the button press when the user presses enter within the country input box
-inputCountry.addEventListener("keypress", function(event){
-    if (event.key === "Enter"){
-        document.getElementById("countryBtn").click();
-    }
-})
-
-// Function which executes the button press when the user presses enter within the currency code input box
-inputCurrency.addEventListener("keypress", function(event){
-    if (event.key === "Enter"){
-        document.getElementById("currencyBtn").click();
-    }
-})
-//NEW STUFF//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+// JSON structure to store all information about the 20 countries
 const countryInfo = [
     {name: "Australia", currency: "AUD", wiki: "https://en.wikipedia.org/wiki/Australia", image: "images/au.png", regions: "Australian Capital Territory, New South Wales, Northern Territory, Queensland, South Australia, Tasmania, Victoria, Western Australia"}, 
     {name: "Bangladesh", currency: "BDT", wiki: "https://en.wikipedia.org/wiki/Bangladesh", image: "images/bd.png", regions: "Barishal, Chattogram, Dhaka, Khulna, Rajshahi, Rangpur, Sylhet"}, 
@@ -43,11 +30,11 @@ const countryInfo = [
     {name: "Canada", currency: "CAD", wiki: "https://en.wikipedia.org/wiki/Canada", image: "images/ca.png", regions: "Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan Yukon"}
 ]
 
+// Event listeners to detect for input in the two search boxes
 inputCountry.addEventListener("input", handleCountrySearch)
 inputCurrency.addEventListener("input", handleCurrencySearch)
 
-
-
+// Function to validate and find the countries which contain the values inserted into the country input box
 function handleCountrySearch(){
     countryName = inputCountry.value.toUpperCase()
     indexArray = []
@@ -71,6 +58,7 @@ function handleCountrySearch(){
     }
 }
 
+// Function to validate and find the countries whose currency codes contain the values insertd into the currency input box
 function handleCurrencySearch(){
     currencyCode = inputCurrency.value
     indexArray = []
@@ -105,7 +93,9 @@ function handleCurrencySearch(){
     
 }
 
+// Function which displays all the country information using the information it gathered from the two search functions
 function displaySearch(array){
+    // Empties the searched countries when there is nothing searched
     while(changingList.firstChild){
         changingList.removeChild(changingList.firstChild)
     }
@@ -117,7 +107,7 @@ function displaySearch(array){
 
     searchContent.style.display = 'block'
     
-
+    //Scans through the JSON structure to get the correct countries and their information. 
     for(let i = 0; i < array.length; i++){
         const node = document.createElement("li")
         const img = document.createElement("img")
@@ -136,6 +126,7 @@ function displaySearch(array){
         currencyCodeTitle.textContent = "Currency: "
         countryRegionTitle.textContent = "Regions:"
 
+        wikiPage.target = "_blank"
         wikiPage.href = countryInfo[array[i]].wiki
         const linkText = document.createElement("p")
         wikiPage.textContent = "Wikipedia"
@@ -164,133 +155,8 @@ function displaySearch(array){
         node.appendChild(img)
         node.appendChild(allCountryInfo)
 
-        node.className = "country"
+        node.className = "dynamic-country"
         changingList.appendChild(node)
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function countryByName(){
-    inputValue = document.getElementById("countryInput").value.trim()
-    pattern = /\d/ // Pattern which finds any integer values
-
-    // Checks whether there is an integer within the input box
-    if (pattern.test(inputValue) == true){
-        alert("Refrain from using numbers \nPlease try again")
-    }
-    else{
-        countrySearchValue = inputValue.toUpperCase()
-        alert(displayResultsUsingCountry(countrySearchValue))
-    }
-}
-
-
-function countryByCurrency(){
-    inputValue = document.getElementById("currencyInput").value.trim()
-    pattern = /^[A-Z]+$/ // Pattern which checks from the start to end of input value to see if each letter is a capital letter
-
-    console.log(pattern.test(inputValue))
-
-    // Check to make sure the user inputs no less than 3 characters
-    if (inputValue.length < 3){
-        alert("Please enter a 3 character currency code")
-    }
-    else{
-        // Checks whether the inputValue is all capital 
-        if (pattern.test(inputValue)){
-            currencySearchValue = inputValue
-            alert(displayResultsUsingCurrency(currencySearchValue))
-        }
-        else{
-            alert("Please make sure the currency code is capital")
-        }
-    }
-}
-
-// JSON structure for countries and their currency codes
-const countryInfo = [
-    {name: "Australia", currency: "AUD"}, 
-    {name: "Bangladesh", currency: "BDT"}, 
-    {name: "Djibouti", currency: "DJF"}, 
-    {name: "Kiribati", currency: "AUD"}, 
-    {name: "Comoros", currency: "KMF"}, 
-    {name: "Dominica", currency: "XCD"}, 
-    {name: "Monaco", currency: "EUR"}, 
-    {name: "Costa Rica", currency: "CRC"}, 
-    {name: "Antigua and Barbuda", currency: "XCD"}, 
-    {name: "Cyprus", currency: "CYP"}, 
-    {name: "Solomon Islands", currency: "SBD"}, 
-    {name: "Bosnia and Herzegovina", currency: "BAM"}, 
-    {name: "Fiji", currency: "JFD"}, 
-    {name: "Eritrea", currency: "ETB"}, 
-    {name: "Sao Tome and Principe", currency: "STD"}, 
-    {name: "Equatorial Guinea", currency: "XAF"}, 
-    {name: "Guinea-Bissau", currency: "XOF"}, 
-    {name: "Montserrat", currency: "XCD"}, 
-    {name: "New Caledonia", currency: "XPF"}, 
-    {name: "Canada", currency: "CAD"}
-]
-
-function displayResultsUsingCountry(validatedValue){
-    let currentNameCapitalized, capitalizedValidatedValue
-    let result = "Match Found!"
-    let counter = 0
-
-    // If nothing is entered into the search box, display "no matches found"
-    if (validatedValue.length == 0){
-        return "No matching countries found"
-    }
-    else{
-        // Loop through all 20 countries and compare by their names. If one is found, display its information on the screen. Maximum countries is 5
-        for (let i = 0; i < 20; i++){
-            currentNameCapitalized = countryInfo[i].name.toUpperCase()
-            capitalizedValidatedValue = validatedValue.toUpperCase()
-            
-            if (currentNameCapitalized.includes(capitalizedValidatedValue) && counter < 5){
-                result += `\nCountry: ${countryInfo[i].name}\nCurrency Code: ${countryInfo[i].currency}\n`  
-                counter++
-            }
-        }
-
-        // If no countries are found, tell the user, ""
-        if (result == "Match Found!"){
-            return "No matching countries found"
-        }
-        else{
-            return result
-        }
-    }
-}
-
-function displayResultsUsingCurrency(validatedValue){
-    let result = "Match Found!"
-    let counter = 0
-
-    // Check through all 20 countries and compare their currency codes. Only the first 5 matching codes will shown on screen
-    for (let i = 0; i < 20; i++){
-        if (validatedValue == countryInfo[i].currency && counter <= 5){
-            result += `\nCountry: ${countryInfo[i].name}\nCurrency Code: ${countryInfo[i].currency}\n` 
-            counter++
-        }
-    }
-
-    // If results variable is unchanged, no countries are found, therefore display "no matches found" on the screen. 
-    // Otherwise print the results found
-    if (result == "Match Found!"){
-        return "No matching countries found"
-    }
-    else{
-        return result
-    }
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

@@ -51,15 +51,24 @@ inputCurrency.addEventListener("input", handleCurrencySearch)
 function handleCountrySearch(){
     countryName = inputCountry.value.toUpperCase()
     indexArray = []
+    containsNumbers = /[0-9]/
+    containsSpecialChar = /[^A-Za-z0-9]/
 
-    if (countryName != ""){
-        for (let i = 0; i < 20; i++){
-            if (countryInfo[i].name.toUpperCase().includes(countryName)){
-                indexArray.push(i)
+    if (/^[A-Za-z]*$/.test(countryName)){
+        if (countryName != ""){
+            for (let i = 0; i < 20; i++){
+                if (countryInfo[i].name.toUpperCase().includes(countryName)){
+                    indexArray.push(i)
+                }
             }
         }
+        displaySearch(indexArray)
     }
-    displaySearch(indexArray)
+    else{
+        countryName = inputCountry.value
+        inputCountry.value = countryName.slice(0, -1)
+        alert("Please enter only letters")
+    }
 }
 
 function handleCurrencySearch(){
@@ -67,6 +76,9 @@ function handleCurrencySearch(){
     indexArray = []
     
     pattern = /^[A-Z]+$/
+    containsLowerCase = /[a-z]/
+    containsNumbers = /[0-9]/
+    containsSpecialChar = /[^A-Za-z0-9]/
 
     if (currencyCode.length == 3){
         if (pattern.test(currencyCode)){
@@ -80,6 +92,10 @@ function handleCurrencySearch(){
         
             displaySearch(indexArray)
         }
+    }
+    else if (containsLowerCase.test(currencyCode) || containsNumbers.test(currencyCode) || containsSpecialChar.test(currencyCode)){
+        inputCurrency.value = currencyCode.slice(0, -1)
+        alert("Please only enter capital letters")
     }
     else{
         searchContent.style.display = 'none'

@@ -107,7 +107,7 @@ function displaySearch(array){
 
     searchContent.style.display = 'block'
     
-    //Scans through the JSON structure to get the correct countries and their information. 
+    //Scans through the JSON structure to get the correct countries and their information and display it onto the screen. 
     for(let i = 0; i < array.length; i++){
         const node = document.createElement("li")
         const img = document.createElement("img")

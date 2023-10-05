@@ -27,10 +27,6 @@ h2{
     background-color: gainsboro;
 }
 
-/* #searchContent > p{
-    margin-top: -20px;
-} */
-
 .country{
     background-color:gainsboro;
     width: 290px;
@@ -61,12 +57,10 @@ h2{
     margin: 1rem;
 } 
 
-.searchContent{
-    background-color: cornsilk;
-    /* width: auto; */
-
-    display: inline-block; /* or display: inline; */
-    border: 5px solid #ccc; /* Optional: Add a border for better visibility */
+#searchContent{
+    background-color:aquamarine;
+    display: none; 
+    border: 5px solid #ccc; 
     padding: 0;
     margin: 0;
 }

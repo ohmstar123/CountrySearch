@@ -43,17 +43,13 @@ const countryInfo = [
     {name: "Canada", currency: "CAD", wiki: "https://en.wikipedia.org/wiki/Canada", image: "images/ca.png", regions: "Alberta, British Columbia, Manitoba, New Brunswick, Newfoundland and Labrador, Northwest Territories, Nova Scotia, Nunavut, Ontario, Prince Edward Island, Quebec, Saskatchewan Yukon"}
 ]
 
-inputCountry.addEventListener("input", handleSearch)
-log = document.getElementById("testing")
+inputCountry.addEventListener("input", handleCountrySearch)
+inputCurrency.addEventListener("input", handleCurrencySearch)
 
-// function handleSearch(e){
-//     countryName = inputCountry.value.toUpperCase()
-//     log.textContent = e.target.value
-// }
 
-function handleSearch(){
+
+function handleCountrySearch(){
     countryName = inputCountry.value.toUpperCase()
-    currencyCode = inputCurrency.value.toUpperCase()
     indexArray = []
 
     if (countryName != ""){
@@ -63,8 +59,34 @@ function handleSearch(){
             }
         }
     }
-    
     displaySearch(indexArray)
+}
+
+function handleCurrencySearch(){
+    currencyCode = inputCurrency.value
+    indexArray = []
+    
+    pattern = /^[A-Z]+$/
+
+    if (currencyCode.length == 3){
+        if (pattern.test(currencyCode)){
+            if (currencyCode != ""){
+                for (let i = 0; i < 20; i++){
+                    if (countryInfo[i].currency.includes(currencyCode)){
+                        indexArray.push(i)
+                    }
+                }
+            }
+        
+            displaySearch(indexArray)
+        }
+    }
+    else{
+        searchContent.style.display = 'none'
+        return
+    }
+
+    
 }
 
 function displaySearch(array){
@@ -88,9 +110,9 @@ function displaySearch(array){
 
         allCountryInfo = document.createElement("div")
         const countryNameTitle = document.createElement("strong")
-        const countryName = document.createTextNode(`${countryInfo[array[i]].name}`)
+        const countryName = document.createTextNode(countryInfo[array[i]].name)
         const currencyCodeTitle = document.createElement("strong")
-        const currencyCode = document.createTextNode(`${countryInfo[array[i]].currency}`)
+        const currencyCode = document.createTextNode(countryInfo[array[i]].currency)
         const wikiPage = document.createElement("a")
         const countryRegionTitle = document.createElement("strong")
 
@@ -122,14 +144,12 @@ function displaySearch(array){
         allCountryInfo.appendChild(wikiPage)
         allCountryInfo.appendChild(countryRegionTitle)
         allCountryInfo.appendChild(countryRegions)
-        //allCountryInfo.appendChild(document.createElement("br"))
 
         node.appendChild(img)
         node.appendChild(allCountryInfo)
 
         node.className = "country"
         changingList.appendChild(node)
-
     }
 
 }
